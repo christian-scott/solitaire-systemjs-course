@@ -25,21 +25,21 @@ node {
     step([$class: 'JUnitResultArchiver', 
           testResults: 'test-results/**/test-results.xml'])
           
-}
+//}
 
 // demoing a second agent
-node('mac') {
-    bat 'dir'
+//node('mac') {
+   // bat 'dir'
    // sh 'ls'
 
-    bat 'del /S /Q *'
+   // bat 'del /S /Q *'
    // sh 'rm -rf *'
 
-    unstash 'everything'
+    //unstash 'everything'
 
-    bat 'dir'
+    //bat 'dir'
     //sh 'ls'
-}
+//}
 
 //parallel integration testing
 stage 'Browser Testing'
