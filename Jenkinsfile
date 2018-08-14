@@ -25,7 +25,7 @@ node {
     step([$class: 'JUnitResultArchiver', 
           testResults: 'test-results/**/test-results.xml'])
           
-//}
+}
 
 // demoing a second agent
 //node('mac') {
