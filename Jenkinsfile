@@ -47,7 +47,7 @@ parallel chrome: {
     runTests("Chrome")
 }, firefox: {
     runTests("Firefox")
-/**}, safari: {
+}/**, safari: {
     runTests("Safari")
 }**/
 
