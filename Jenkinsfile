@@ -65,11 +65,11 @@ def runTests(browser) {
               testResults: 'test-results/**/test-results.xml'])
     }
 }
-
+/**
 node {
     notify("Deploy to staging?")
 }
-
+**/
 input 'Deploy to staging?'
 
 // limit concurrency so we don't perform simultaneous deploys
@@ -85,7 +85,7 @@ node {
     bat 'docker-compose up -d --build'
     //sh 'docker-compose up -d --build'
     
-    notify 'Solitaire Deployed!'
+   // notify 'Solitaire Deployed!'
 }
 
 
