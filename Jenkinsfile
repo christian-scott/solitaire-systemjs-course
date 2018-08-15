@@ -82,7 +82,6 @@ node {
    // sh "echo '<h1>${env.BUILD_DISPLAY_NAME}</h1>' >> app/index.html"
     
     // deploy to a docker container mapped to port 3000
-    bat '@FOR /f "tokens=*" %i IN ('"C:\ProgramData\chocolatey\lib\docker-machine\bin\docker-machine.exe" env dev') DO @%i'
     bat 'docker-compose up -d --build'
     //sh 'docker-compose up -d --build'
     
