@@ -41,15 +41,15 @@ node {
     //sh 'ls'
 //}
 
-//parallel integration testing
+/**parallel integration testing
 stage 'Browser Testing'
 parallel chrome: {
     runTests("Chrome")
-}/**, firefox: {
+}, firefox: {
     runTests("Firefox")
 }, safari: {
     runTests("Safari")
-}**/
+}
 
 def runTests(browser) {
     node {
@@ -62,10 +62,11 @@ def runTests(browser) {
         //sh "npm run test-single-run -- --browsers ${browser}"
 
         step([$class: 'JUnitResultArchiver', 
-              testResults: 'test-results/**/test-results.xml'])
+              testResults: 'test-results|**|test-results.xml'])
     }
+
 }
-/**
+
 node {
     notify("Deploy to staging?")
 }
